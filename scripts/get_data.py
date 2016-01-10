@@ -40,7 +40,7 @@ for name in files.keys():
         sleep(.5)
         logger.debug('Loading page {}'.format(i))
         try:
-            response = urllib.urlopen(url.format(i))
+            response = urllib.urlopen(files[name].format(i))
             data = json.loads(response.read())
             items += data.get('items', [])
         except:
